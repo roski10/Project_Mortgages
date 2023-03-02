@@ -1,5 +1,5 @@
 import pandas as pd
-def clean_data(df: pd.DataFrame) -> pd.DataFrame:
+def clean_data(data: pd.DataFrame) -> pd.DataFrame:
 
     # We are only concerned with analysing the primary market for our project, therefore we must remove all rows associated with the action loan purchased by the instituiton.
     # We also need to remove all rows associated with the action 'Application withdrawn by client'
@@ -28,5 +28,6 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
                           'denial_reason_name_3','denial_reason_name_2',
                           'denial_reason_name_1','rate_spread','edit_status_name',
                          'state_abbr','respondent_id','agency_abbr','as_of_year',
-                            'application_date_indicator','state_name','sequence_number'])
+                            'application_date_indicator','state_name','sequence_number',
+                         'census_tract_number'])
     return data
