@@ -1,7 +1,7 @@
 import pandas as pd
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, classification_report
-from dapo_preprocessing import preprocess_and_resample
+from ml_logic.preprocessing import preprocess_and_resample
 
 def train_and_evaluate_model(X_train: pd.DataFrame,
                              X_test: pd.DataFrame,
