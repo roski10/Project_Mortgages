@@ -41,6 +41,3 @@ def train_and_evaluate_model(X_train: pd.DataFrame,
     print(f"\n✅ Classification report:\n{class_report}")
 
     return model, y_pred
-
-
-x_train, y_train = preprocess_and_resample('data')
