@@ -1,10 +1,9 @@
+import os
+import pandas as pd
 from clean_data import clean_data
 from preprocessing import  preprocess_and_resample
 from model import train_and_evaluate_model
 
-import pandas as pd
-
-import os
 
 def main(file_path):
     data_original = pd.read_csv(file_path, decimal=',')
