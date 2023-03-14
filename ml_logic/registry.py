@@ -1,6 +1,7 @@
 import streamlit as st
 import xgboost as xgb
 import joblib
+import pickle
 
 def train_and_save_model(X_train, y_train, model_path):
     # Train XGBoost model
@@ -9,13 +10,16 @@ def train_and_save_model(X_train, y_train, model_path):
 
     # Save model to file path
     # model.save_model(model_path)
-    import pickle
-    file = open("/home/adedapo/code/roski10/Project_Mortgages/xgbmodel.pkl", "wb")
+
+    file = open("/Users/rohanmehra/code/roski10/Project_Mortgages/xgbmodel.pkl", "wb")
     pickle.dump(model, file)
     file.close()
 
     # Return model object
     return model
+
+
+
 
 def load_and_predict(model_path, X_test):
     # Load model from file path
@@ -28,8 +32,3 @@ def load_and_predict(model_path, X_test):
 
     # Return predicted values
     return y_pred
-
-# Example usage
-X_train = ...  # load training data
-y_train = ...  # load training labels
-# model_path
