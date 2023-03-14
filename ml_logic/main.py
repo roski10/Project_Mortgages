@@ -11,6 +11,8 @@ def main(file_path):
     X_train, X_test, y_train, y_test = preprocess_and_resample(data)
     model, y_pred = train_and_evaluate_model(X_train, X_test, y_train, y_test)
 
+    return y_pred
+
 if __name__ == '__main__':
     data_dir = "raw_data"
     file_name = "Washington_State_HDMA-2016.csv"
