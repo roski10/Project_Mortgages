@@ -27,7 +27,7 @@ def preprocess_and_resample(data: pd.DataFrame):
                'loan_type_name','loan_purpose_name','lien_status_name',
                'hoepa_status_name','co_applicant_sex_name','co_applicant_race_name_1',
                'co_applicant_ethnicity_name','applicant_sex_name','applicant_race_name_1',
-               'applicant_ethnicity_name','agency_name', 'region']
+               'applicant_ethnicity_name', 'region']
 
     preprocessor = make_column_transformer(
         (num_pipe, num_col),
@@ -37,7 +37,7 @@ def preprocess_and_resample(data: pd.DataFrame):
     )
 
     # Apply the preprocessor to the training data
-    X_train_processed = pd.DataFrame(preprocessor.fit_transform(X_train), columns=preprocessor.get_feature_names_out())
+    X_train_processed = pd.DataFrame(preprocessor.fit_transform(X_train), columns=[name.split('__')[1] for name in preprocessor.get_feature_names_out()])
 
     # Resample the training data with SMOTE
     sm = SMOTE(sampling_strategy='minority')
