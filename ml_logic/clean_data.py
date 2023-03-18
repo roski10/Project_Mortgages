@@ -50,7 +50,7 @@ def clean_data(data: pd.DataFrame):
                  'denial_reason_name_2', 'denial_reason_name_1', 'rate_spread', 'edit_status_name',
                  'state_abbr', 'respondent_id', 'agency_abbr', 'as_of_year', 'application_date_indicator',
                  'state_name', 'sequence_number', 'census_tract_number', 'action_taken_name', 'purchaser_type_name',
-                 'county_name','msamd_name']
+                 'county_name','msamd_name', 'agency_name']
 
     data = data.drop(columns=drop_cols)
 
